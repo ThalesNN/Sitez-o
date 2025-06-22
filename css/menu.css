@@ -1,0 +1,265 @@
+/* ===== Container de Menu ===== */
+#menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  position: relative;
+  padding: 40px 0;
+}
+
+/* ===== Títulos com estrelas ao redor ===== */
+#menu h2,
+#menu h3 {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+#menu h2::before,
+#menu h2::after,
+#menu h3::before,
+#menu h3::after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background: #FFD700;
+  clip-path: polygon(
+    50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%,
+    50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%
+  );
+  animation: blinkStar 4s infinite ease-in-out;
+  z-index: -1;
+}
+
+#menu h2::before {
+  top: -20px;
+  left: -30px;
+  background: #FFD700;
+}
+#menu h2::after {
+  top: -20px;
+  right: -30px;
+  background: #FF69B4;
+}
+#menu h3::before {
+  bottom: -20px;
+  left: -20px;
+  background: #87CEFA;
+}
+#menu h3::after {
+  bottom: -20px;
+  right: -20px;
+  background: #FFA500;
+}
+
+@keyframes blinkStar {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.3) rotate(20deg);
+  }
+}
+
+/* ===== Cards alinhados e centralizados ===== */
+#dishes {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 32px;
+  padding: 0 16px;
+}
+
+/* ===== Estilo dos cards ===== */
+.dish {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  width: 220px;
+  padding: 20px;
+  background-color: azure;
+  box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* ===== Imagens padronizadas ===== */
+.dish img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* ===== Título e Descrição ===== */
+.dish-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+  margin-top: 8px;
+}
+
+.dish-description {
+  color: #434343;
+  font-size: 0.9rem;
+  padding: 0 8px;
+}
+
+/* ===== Preço e botão centralizados ===== */
+.dish-price {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.dish-price h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.dish-price .btn-default {
+  margin-top: 8px;
+  padding: 10px 14px;
+  background-color: rgb(253, 52, 52);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dish-price .btn-default:hover {
+  background-color: rgb(220, 40, 40);
+}
+
+.dish-price .btn-default i {
+  color: #434343;
+  font-size: 1.1rem;
+}
+
+/* ===== Ícone de coração ===== */
+.dish-heart {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  background-color: rgb(253, 52, 52);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  z-index: 10;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.heart-icon {
+  color: #434343;
+  font-size: 1.2rem;
+}
+
+/* ===== Círculos decorativos ===== */
+.dish::before,
+.dish::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  z-index: 0;
+  opacity: 0.3;
+}
+
+.dish::before {
+  width: 120px;
+  height: 120px;
+  background: rgba(91, 157, 231, 0.5);
+  top: -40px;
+  left: -40px;
+  animation: floatRotate 6s infinite ease-in-out;
+}
+
+.dish::after {
+  width: 80px;
+  height: 80px;
+  background: rgba(253, 52, 52, 0.4);
+  bottom: -30px;
+  right: -30px;
+  animation: floatPulse 5s infinite ease-in-out;
+}
+
+@keyframes floatRotate {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(30deg) scale(1.1);
+  }
+}
+
+@keyframes floatPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+}
+
+/* ===== Estrelas nas corners ===== */
+.dish .star {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #FFD700;
+  clip-path: polygon(
+    50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%,
+    50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%
+  );
+  animation: blinkStar 4s infinite ease-in-out;
+  z-index: 1;
+  opacity: 0.6;
+}
+
+.dish .star:nth-child(1) { top: 10px; left: 10px; background: #FFD700; }
+.dish .star:nth-child(2) { top: 10px; right: 10px; background: #FF69B4; }
+.dish .star:nth-child(3) { bottom: 10px; left: 10px; background: #87CEFA; }
+.dish .star:nth-child(4) { bottom: 10px; right: 10px; background: #FFA500; }
+
+/* ===== Responsivo ===== */
+@media screen and (max-width: 1170px) {
+  #dishes {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .dish {
+    width: calc(50% - 12px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .dish {
+    width: calc(100% - 12px);
+  }
+
+  #menu .section-subtitle {
+    text-align: center;
+  }
+}

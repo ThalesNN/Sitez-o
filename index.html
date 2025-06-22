@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <title>Landing Page Responsiva</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/margem.css" />
+  <link rel="stylesheet" href="css/menu.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <nav id="navbar">
+      <i class="fa-solid fa-pen-nib" id="nav_logo"> Academia Lumina</i>
+      <ul id="nav_list">
+        <li class="nav-item"><a href="#home">Início</a></li>
+        <li class="nav-item"><a href="#menu">Cadeiras</a></li>
+        <li class="nav-item"><a href="#testimonials">Avaliações</a></li>
+      </ul>
+      <button class="btn-default">Participe já!</button>
+      <button id="mobile_btn"><i class="fa-solid fa-bars"></i></button>
+    </nav>
+
+    <div id="mobile_menu">
+      <ul id="mobile_nav_list">
+        <li class="nav-item"><a href="#home">Início</a></li>
+        <li class="nav-item"><a href="#menu">Cadeiras</a></li>
+        <li class="nav-item"><a href="#testimonials">Avaliações</a></li>
+      </ul>
+      <button class="btn-default">Participe já!</button>
+    </div>
+  </header>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main id="content">
+
+    <!-- HOME -->
+    <section id="home">
+      <div class="shape"></div>
+      <div class="home-container">
+        <div id="ctn">
+          <h1 class="title">Bem-vindo à sua nova <span>jornada</span></h1>
+          <p class="description">A nossa arte espera por você! Aproveite os seus novos matériais disponíveis online e venha fazer parte da Academia Lumina</p>
+
+          <div id="cta_buttons">
+            <a href="#menu" class="btn-default">Ver Cadeiras</a>
+            <a href="tel:+5555555" id="phone_button">
+              <button class="btn-default">
+                <i class="fa-solid fa-phone"></i>
+              </button>
+              (85) 75428-5323
+            </a>
+          </div>
+
+          <div class="social-media-buttons">
+            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          </div>
+        </div>
+
+        <div id="banner">
+          <span class="banner-circle circle-1"></span>
+          <span class="banner-circle circle-2"></span>
+          <span class="banner-circle circle-3"></span>
+          <img src="img/arte22.jpg" alt="Imagem de arte" />
+        </div>
+      </div>
+    </section>
+
+    <!-- MENU DE CADEIRAS -->
+    <section id="menu">
+      <h2 class="section-title">Cadeiras</h2>
+      <h3 class="section-subtitle">Nossos cantos mágicos</h3>
+
+      <div id="dishes">
+        
+        <!-- ITEM 1 -->
+        <a href="detalhes.html?title=Teatro&desc=Explore técnicas teatrais e expressão corporal.&price=200,00&img=img/teatro.jpg" class="dish-link">
+          <div class="dish">
+            <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
+            <img src="img/teatro.jpg" class="dish-image" alt="Teatro">
+            <h3 class="dish-title">Teatro</h3>
+            <span class="dish-description">Explore técnicas teatrais e expressão corporal.</span>
+            <div class="dish-price">
+              <h4>R$ 200,00</h4>
+              <button class="btn-default"><i class="fa-solid fa-basket-shopping"></i></button>
+            </div>
+          </div>
+        </a>
+
+        <!-- ITEM 2 -->
+        <a href="detalhes.html?title=Artes Visuais&desc=Estuda técnicas e linguagens das artes plásticas.&price=200,00&img=img/arte33.jpg" class="dish-link">
+          <div class="dish">
+            <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
+            <img src="img/arte33.jpg" class="dish-image" alt="Artes Visuais">
+            <h3 class="dish-title">Artes Visuais</h3>
+            <span class="dish-description">Estuda pintura, escultura, desenho e gravura. Desenvolve a criatividade e percepção estética.</span>
+            <div class="dish-price">
+              <h4>R$ 200,00</h4>
+              <button class="btn-default"><i class="fa-solid fa-basket-shopping"></i></button>
+            </div>
+          </div>
+        </a>
+
+        <!-- ITEM 3 -->
+        <a href="detalhes.html?title=Design Gráfico&desc=Focado na criação de projetos visuais digitais e impressos.&price=200,00&img=img/grafico.jpg" class="dish-link">
+          <div class="dish">
+            <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
+            <img src="img/grafico.jpg" class="dish-image" alt="Design Gráfico">
+            <h3 class="dish-title">Design Gráfico</h3>
+            <span class="dish-description">Aborda tipografia, identidade visual e edição digital. Ideal para comunicação visual.</span>
+            <div class="dish-price">
+              <h4>R$ 200,00</h4>
+              <button class="btn-default"><i class="fa-solid fa-basket-shopping"></i></button>
+            </div>
+          </div>
+        </a>
+
+        <!-- ITEM 4 -->
+        <a href="detalhes.html?title=Fotografia&desc=Técnicas de captura, iluminação e edição de imagem.&price=200,00&img=img/photo.jpg" class="dish-link">
+          <div class="dish">
+            <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
+            <img src="img/photo.jpg" class="dish-image" alt="Fotografia">
+            <h3 class="dish-title">Fotografia</h3>
+            <span class="dish-description">Estética fotográfica, iluminação e história da fotografia. Atua em moda, arte e documentação.</span>
+            <div class="dish-price">
+              <h4>R$ 200,00</h4>
+              <button class="btn-default"><i class="fa-solid fa-basket-shopping"></i></button>
+            </div>
+          </div>
+        </a>
+
+        <!-- ITEM 5 -->
+        <a href="detalhes.html?title=Artes Cênicas&desc=Explora teatro, dança e performance no palco.&price=200,00&img=img/cenica.jpg" class="dish-link">
+          <div class="dish">
+            <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
+            <img src="img/cenica.jpg" class="dish-image" alt="Artes Cênicas">
+            <h3 class="dish-title">Artes Cênicas</h3>
+            <span class="dish-description">Expressão corporal, interpretação e presença de palco. Estimula a criação artística.</span>
+            <div class="dish-price">
+              <h4>R$ 200,00</h4>
+              <button class="btn-default"><i class="fa-solid fa-basket-shopping"></i></button>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </section>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

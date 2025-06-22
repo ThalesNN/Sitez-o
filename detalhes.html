@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detalhes do Curso</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />       <!-- Cor de fundo, formas -->
+  <link rel="stylesheet" href="css/header.css" />      <!-- Header -->
+  <link rel="stylesheet" href="css/detalhes.css" />    <!-- Estilo desta página -->
+</head>
+<body>
+
+  <!-- Header igual ao index -->
+  <header class="header">
+    <nav id="navbar">
+      <i class="fa-solid fa-pen-nib" id="nav_logo"> Academia Lumina</i>
+      <ul id="nav_list">
+        <li class="nav-item"><a href="index.html#home">Início</a></li>
+        <li class="nav-item"><a href="index.html#menu">Cadeiras</a></li>
+        <li class="nav-item"><a href="index.html#testimonials">Avaliações</a></li>
+      </ul>
+      <button class="btn-default">Participe já!</button>
+      <button id="mobile_btn"><i class="fa-solid fa-bars"></i></button>
+    </nav>
+
+    <div id="mobile_menu">
+      <ul id="mobile_nav_list">
+        <li class="nav-item"><a href="index.html#home">Início</a></li>
+        <li class="nav-item"><a href="index.html#menu">Cadeiras</a></li>
+        <li class="nav-item"><a href="index.html#testimonials">Avaliações</a></li>
+      </ul>
+      <button class="btn-default">Participe já!</button>
+    </div>
+  </header>
+
+  <!-- Conteúdo do detalhe -->
+  <main class="detalhes-container">
+    <div class="detalhes-content">
+      <img id="detalhes-img" src="img/teatro.jpg" alt="Imagem do Curso">
+      <div class="detalhes-text">
+        <h1 id="detalhes-title">Título do Curso</h1>
+        <p id="detalhes-desc">Descrição detalhada do curso será exibida aqui com base na escolha feita na página anterior.</p>
+        <h3 id="detalhes-price">R$ 0,00</h3>
+        <button class="btn-default">Inscreva-se</button>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    document.getElementById("detalhes-title").textContent = params.get("title") || "Curso";
+    document.getElementById("detalhes-desc").textContent = params.get("desc") || "Descrição não disponível.";
+    document.getElementById("detalhes-price").textContent = "R$ " + (params.get("price") || "0,00");
+    document.getElementById("detalhes-img").src = params.get("img") || "img/placeholder.jpg";
+  </script>
+</body>
+</html>
