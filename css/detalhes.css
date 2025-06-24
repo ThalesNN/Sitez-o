@@ -1,178 +1,252 @@
-/* ===== Estrelas decorativas no body ===== */
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #fff9ea;
+/* Reset e base */
+* {
   margin: 0;
   padding: 0;
-  position: relative;
-  overflow-x: hidden;
-  z-index: 0;
+  box-sizing: border-box;
+  font-family: 'Oswald', sans-serif;
 }
 
-body::before,
-body::after {
-  content: "";
-  position: fixed;
-  width: 60px;
-  height: 60px;
-  background: #FFD700;
-  clip-path: polygon(
-    50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%,
-    50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%
-  );
-  pointer-events: none;
-  animation: starPulse 4s infinite ease-in-out;
-  z-index: 10000;
-  filter: drop-shadow(0 0 5px #FFD700);
-}
-
-body::before {
-  top: 10px;
-  left: 10px;
-  box-shadow:
-    100px 30px #FFD700,
-    200px 0px #FFD700,
-    300px 40px #FFD700;
-}
-
-body::after {
-  bottom: 10px;
-  right: 10px;
-  box-shadow:
-    -100px -30px #FFD700,
-    -200px 0px #FFD700,
-    -300px -40px #FFD700;
-}
-
-@keyframes starPulse {
-  0%, 100% {
-    opacity: 0.5;
-    transform: scale(1) rotate(0deg);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.3) rotate(20deg);
-  }
-}
-
-/* ===== Container principal ===== */
-.detalhes-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 40px 20px;
+body {
   background-color: #fff9ea;
+  overflow-x: hidden;
+  position: relative;
 }
 
-/* ===== Box de conteúdo ===== */
-.detalhes-content {
+/* Header */
+.header {
+  width: 100%;
+  padding: 20px 8%;
+  background-color: #fef1ce;
+}
+
+#navbar {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  background: azure;
-  padding: 24px;
-  border-radius: 16px;
-  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
-  max-width: 900px;
-  width: 100%;
-  gap: 20px;
-  position: relative;
 }
 
-/* ===== Círculos animados atrás da imagem ===== */
-.detalhes-content::before,
-.detalhes-content::after {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  opacity: 0.4;
-  z-index: 0;
-  pointer-events: none;
+#nav_logo {
+  font-size: 24px;
+  color: rgb(104, 118, 240);
 }
 
-.detalhes-content::before {
-  width: 140px;
-  height: 140px;
-  background: rgba(91, 157, 231, 0.5);
-  top: -40px;
-  left: -40px;
-  animation: floatRotate 6s infinite ease-in-out;
+#nav_list {
+  display: flex;
+  list-style: none;
+  gap: 48px;
 }
 
-.detalhes-content::after {
-  width: 100px;
-  height: 100px;
-  background: rgba(253, 52, 52, 0.4);
-  bottom: -30px;
-  right: -30px;
-  animation: floatPulse 5s infinite ease-in-out;
+#nav_list a {
+  text-decoration: none;
+  color: #0000ee;
 }
 
-@keyframes floatRotate {
-  0%, 100% {
-    transform: rotate(0deg) scale(1);
-  }
-  50% {
-    transform: rotate(30deg) scale(1.1);
-  }
-}
-
-@keyframes floatPulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.3);
-  }
-}
-
-/* ===== Imagem ===== */
-.detalhes-content img {
-  width: 100%;
-  max-width: 300px; /* imagem menor */
-  border-radius: 12px;
-  object-fit: cover;
-  position: relative;
-  z-index: 2;
-}
-
-/* ===== Texto ===== */
-.detalhes-text {
-  text-align: center;
-  position: relative;
-  z-index: 2;
-}
-
-.detalhes-text h1 {
-  font-size: 2rem;
-  color: #333;
-}
-
-.detalhes-text p {
-  font-size: 1.1rem;
-  margin: 10px 0;
-  color: #555;
-}
-
-.detalhes-text h3 {
-  font-size: 1.4rem;
-  margin: 10px 0;
-  color: rgb(253, 52, 52);
-}
-
-/* ===== Botão ===== */
 .btn-default {
-  padding: 10px 20px;
-  background-color: rgb(253, 52, 52);
-  border: none;
-  border-radius: 8px;
+  background-color: #a271dc;
   color: white;
-  font-size: 1rem;
+  padding: 10px 18px;
+  border-radius: 12px;
+  border: none;
+  font-weight: bold;
   cursor: pointer;
-  transition: background 0.3s ease;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 }
 
 .btn-default:hover {
-  background-color: rgb(220, 40, 40);
+  background-color: #8057bb;
+}
+
+/* Container principal */
+.detalhes-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  padding: 60px 8%;
+  position: relative;
+  z-index: 1;
+  flex-wrap: wrap;
+}
+
+/* Imagem */
+.imagem-detalhe {
+  position: relative;
+  z-index: 2;
+}
+
+.imagem-detalhe img {
+  width: 340px;
+  border-radius: 16px;
+  box-shadow: 10px 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Texto */
+.detalhes-info {
+  background-color: #e7f7fd;
+  padding: 40px 50px;
+  border-radius: 24px;
+  box-shadow: 8px 8px 24px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 480px;
+  min-height: 380px;
+  position: relative;
+  z-index: 2;
+}
+
+.detalhes-info h2 {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.detalhes-info p {
+  font-size: 18px;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+.preco {
+  color: #d12c2c;
+  font-weight: bold;
+  font-size: 22px;
+  display: block;
+  margin-bottom: 24px;
+}
+
+.btn-inscrever {
+  background-color: #f44336;
+  color: white;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.btn-inscrever:hover {
+  background-color: #d22a1c;
+}
+
+/* Círculos decorativos */
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0.3;
+  animation: float 6s ease-in-out infinite;
+}
+
+.circle.red {
+  background-color: #ff6d6d;
+  width: 100px;
+  height: 100px;
+  top: -40px;
+  left: -40px;
+}
+
+.circle.blue {
+  background-color: #3a5edb;
+  width: 80px;
+  height: 80px;
+  bottom: -30px;
+  right: -30px;
+}
+
+.circle.purple {
+  background-color: #cc99ff;
+  width: 60px;
+  height: 60px;
+  top: -30px;
+  right: -30px;
+}
+
+/* Estrelas animadas no fundo */
+.animated-stars .star {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  background: yellow;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  animation: floatStar 8s linear infinite;
+}
+
+.animated-stars .star.delay1 { left: 20%; animation-delay: 2s; }
+.animated-stars .star.delay2 { left: 70%; animation-delay: 4s; }
+.animated-stars .star.delay3 { left: 90%; animation-delay: 6s; }
+
+/* Estrelas fixas (mais estrelas) */
+.estrela {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: yellow;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  opacity: 0.6;
+  z-index: -1;
+  animation: pulse 5s infinite;
+}
+
+.estrela-img {
+  top: 10px;
+  right: -20px;
+}
+
+.estrela-info {
+  bottom: 10px;
+  left: -25px;
+}
+
+.estrela-info2 {
+  top: 10px;
+  left: 20px;
+}
+
+.estrela-info3 {
+  bottom: 30px;
+  right: -15px;
+}
+
+.estrela-img2 {
+  bottom: -20px;
+  left: -20px;
+}
+
+/* Animações */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes floatStar {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(100vh) rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.2); opacity: 1; }
+}
+/* Estrelas na header */
+.estrela-header1,
+.estrela-header2 {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: yellow;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  opacity: 0.7;
+  z-index: 0;
+  animation: pulse 4s infinite;
+}
+
+.estrela-header1 {
+  top: 10px;
+  left: 12%;
+}
+
+.estrela-header2 {
+  top: 20px;
+  right: 10%;
 }
